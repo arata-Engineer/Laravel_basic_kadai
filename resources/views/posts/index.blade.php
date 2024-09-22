@@ -10,15 +10,21 @@
 <body>
     <h1>投稿一覧</h1>
 
-    <ul>
-        @foreach ($posts as $post)
-        <li>
-            <a href="{{ route('posts.show', $post->id) }}">{{ $post->title }}</a>
-        </li>
-        @endforeach
-    </ul>
+    <table>
+    <tr>
+      <th>タイトル</th>
+      <th>本文</th>
+    </tr>
+    @foreach ($posts as $post)
+      <tr>
+        <td>{{$post->title}}</td>
+        <td>{{$post->content}}</td>
+      </tr>
+    @endforeach
+  </table>
 
     <a href="{{ route('posts.create') }}">新規作成</a>
 </body>
+
 
 </html>

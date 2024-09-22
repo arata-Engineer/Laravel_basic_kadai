@@ -15,7 +15,8 @@ use App\Http\Controllers\PostController;
 */
 
 
-Route::get('/posts', [PostController::class, 'index']);
-Route::get('/posts/create', [PostController::class, 'create']);
-Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
-Route::get('/posts/{id}', [PostController::class, 'show']);
+Route::get('/posts', [PostController::class, 'posts.index']);
+//Route::get('/posts/create', [PostController::class, 'posts.create']);
+Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
+Route::post('/posts', [PostController::class, 'store'])->middleware(['auth','verfied'])->name('posts.store');
+Route::get('/posts/{id}', [PostController::class, 'posts.show']);

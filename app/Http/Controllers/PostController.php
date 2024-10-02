@@ -23,8 +23,8 @@ class PostController extends Controller
     {
         // バリデーションする
         $request->validate([
-            'title' => 'required|string|max:255',
-            'content' => 'required|string',
+            'title' => 'required|string|max:20', // タイトルを20文字に制限
+            'content' => 'required|string|max:200', // 本文を200文字に制限
         ]);
     
         // 新規ポストを作成しデータベースに保存

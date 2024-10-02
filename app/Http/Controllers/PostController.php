@@ -34,7 +34,7 @@ class PostController extends Controller
         $post->save();
     
         // 投稿一覧ページにリダイレクト
-        return redirect()->route('posts.index');
+        return redirect('/posts');
     }
     
 
